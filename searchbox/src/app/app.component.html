@@ -1,0 +1,58 @@
+<div class="container">
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                    <i class="fa fa-search"></i>
+                </div>
+                <!--end of col-->
+                <div class="col">
+                    <input class="form-control form-control-borderless" type="text"
+                        placeholder="Search topics or keywords" (keyup)="doSearch($event.target.value)">
+                </div>
+                <!--end of col-->
+            </div>
+        </div>
+        <!--end of col-->
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+            <p *ngIf="results == ''; else showResults" class="alert alert-danger">
+                <span><strong>Notice: </strong> No Result.</span>
+            </p>
+            <ng-template #showResults>
+                <ul class="main-list">
+
+                    <li *ngFor="let result of results">
+                        <div class="well well-sm">
+                            <div class="date-section">
+                                {{result.start_date}} to {{result.end_date}}
+
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-9 col-md-12 section-box">
+                                    <h5>
+                                        {{result.position_title}} <a href="{{result.url}}" target="_blank"><span
+                                                class="fa fa-link">
+                                            </span></a>
+                                    </h5>
+                                    <p>
+                                        <label class="lable-name">
+                                            Organization Name:
+                                        </label>
+                                        {{result.organization_name}}</p>
+                                    <hr />
+                                    <div class="location-section">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        {{result.locations}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </ng-template>
+        </div>
+    </div>
+</div>

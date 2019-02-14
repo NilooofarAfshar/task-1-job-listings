@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color: #f7f7f7 !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #c1c1c1;
+    font-size: 13px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #c1c1c1;
+    font-size: 13px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #c1c1c1;
+    font-size: 13px;    
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #c1c1c1;
+    font-size: 13px;    
+  }
